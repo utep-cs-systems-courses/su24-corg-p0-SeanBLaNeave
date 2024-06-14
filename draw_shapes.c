@@ -26,3 +26,19 @@ void print_triangle(int leftCol, int size)
   }
 }
 
+// Print a arrow of specified height and whith.
+void print_arrow(int leftCol, int size)
+{
+  for (int row = 0; row < size; row++) {
+    int col;
+    if (row < size / 2) {
+      int minCol = leftCol + size - row, maxCol = leftCol + size + row;
+      for (col = 0; col < minCol; col++) putchar(' ');
+      for (       ; col <= maxCol; col++) putchar('*');
+    } else {
+      for (col = 0; col < leftCol + size; col++) putchar(' ');
+      for (       ; col <= leftCol + size; col++) putchar('*');
+    }   
+    putchar('\n');
+  }
+}
